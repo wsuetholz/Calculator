@@ -35,6 +35,9 @@ public class Calculator extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
 	    throws ServletException, IOException {
+	boolean goodValues = true;
+	String destPage = RESULT_PAGE;
+	
 	response.setContentType("text/html;charset=UTF-8");
 	try (PrintWriter out = response.getWriter()) {
 	    /* TODO output your page here. You may use following sample code. */
@@ -45,28 +48,29 @@ public class Calculator extends HttpServlet {
 		length = Long.parseLong(lengthStr);
 	    } catch (NumberFormatException ie) {
 		request.setAttribute("errorMessage", "Bad Length: " + ie.getMessage());
-
-		RequestDispatcher view =
-		    request.getRequestDispatcher(ERROR_PAGE);
-		view.forward(request, response);
+		destPage = ERROR_PAGE;
+		goodValues = false;
 	    }
 	    long width = 0L;
-	    try {
-		width = Long.parseLong(widthStr);
-	    } catch (NumberFormatException ie) {
-		request.setAttribute("errorMessage", "Bad Width: " + ie.getMessage());
+	    if (goodValues) {
+		try {
+		    width = Long.parseLong(widthStr);
+		} catch (NumberFormatException ie) {
+		    request.setAttribute("errorMessage", "Bad Width: " + ie.getMessage());
+		    destPage = ERROR_PAGE;
+		    goodValues = false;
+		}
+	    }
 
-		RequestDispatcher view =
-		    request.getRequestDispatcher(ERROR_PAGE);
-		view.forward(request, response);
+	    if (goodValues) {
+		CalculatorService calc = new CalculatorService();
+		long area = calc.calculateRectangleArea ( length, width );
+
+		request.setAttribute("area", Long.toString(area));
 	    }
 	    
-	    CalculatorService calc = new CalculatorService();
-	    long area = calc.calculateRectangleArea ( length, width );
-	    
-	    request.setAttribute("area", Long.toString(area));
 	    RequestDispatcher view =
-		request.getRequestDispatcher(RESULT_PAGE);
+		request.getRequestDispatcher(destPage);
 	    view.forward(request, response);
 	}
     }
