@@ -16,6 +16,14 @@
         <servlet-name>Calculator2</servlet-name>
         <url-pattern>/calculate2.area</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>Calculator3</servlet-name>
+        <servlet-class>lab3.controller.Calculator</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Calculator3</servlet-name>
+        <url-pattern>/calculate3.area</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30

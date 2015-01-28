@@ -15,7 +15,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>Simple Area Calculator</title>
+	<title>Simple Area Calculator (Dual Pages)</title>
     </head>
     <body>
 	<p>
