@@ -19,10 +19,11 @@
     </head>
     <body>
 	<h1>Simple Area Calculator</h1>
+	<c:set var="baseURL" value="${pageContext.request.contextPath}" />
 	
 	<div name="rectangle">
-	    <img src="images/rectangle.jpeg" alt="Rectangle"/>
-	    <form id="rareacalc" name="rareacalc" action="<%= request.getContextPath() %>/calculate4.area?f=rectangle" method="post">
+	    <img src="${baseURL}/images/rectangle.jpeg" alt="Rectangle"/>
+	    <form id="rareacalc" name="rareacalc" action="${baseURL}//calculate4.area?f=rectangle" method="post">
 		Length:
 		<input type="text" name="length" value="${length}" placeholder="eg 15.67" />
 		Width:
@@ -34,8 +35,8 @@
 	</div>
 		
 	<div name="circle">
-	    <img src="images/circle.jpeg" alt="Circle"/>
-	    <form id="careacalc" name="careacalc" action="<%= request.getContextPath() %>/calculate4.area?f=circle" method="post">
+	    <img src="${baseURL}/images/circle.jpeg" alt="Circle"/>
+	    <form id="careacalc" name="careacalc" action="${baseURL}/calculate4.area?f=circle" method="post">
 		Radius:
 		<input type="text" name="radius" value="${radius}" placeholder="eg 15.67" />
 		Area: <c:out value="${circlearea}" />
@@ -45,8 +46,8 @@
 	</div>
 		
 	<div name="triangle">
-	    <img src="images/righttriangle.jpeg" alt="Triangle"/>
-	    <form id="tareacalc" name="tareacalc" action="<%= request.getContextPath() %>/calculate4.area?f=triangle" method="post">
+	    <img src="${baseURL}/images/righttriangle.jpeg" alt="Triangle"/>
+	    <form id="tareacalc" name="tareacalc" action="${baseURL}//calculate4.area?f=triangle" method="post">
 		Height:
 		<input type="text" name="height" value="${height}" placeholder="eg 15.67" />
 		Base Length:
@@ -122,6 +123,14 @@
 
 	    <td width="313">&#160; 
 	    <c:out value="${pageContext.request.requestURI}" />
+	    </td>
+	  </tr>
+
+	  <tr>
+	    <td width="210">baseURL</td>
+
+	    <td width="313">&#160; 
+	    <c:out value="${baseURL}" />
 	    </td>
 	  </tr>
 	</table>
