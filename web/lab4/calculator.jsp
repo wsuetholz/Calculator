@@ -19,8 +19,9 @@
     </head>
     <body>
 	<h1>Simple Area Calculator</h1>
+	
 	<div name="rectangle">
-	    <img src="lab3/rectangle.jpeg" alt="Rectangle"/>
+	    <img src="images/rectangle.jpeg" alt="Rectangle"/>
 	    <form id="rareacalc" name="rareacalc" action="<%= request.getContextPath() %>/calculate4.area?f=rectangle" method="post">
 		Length:
 		<input type="text" name="length" value="${length}" placeholder="eg 15.67" />
@@ -31,8 +32,9 @@
 		<input type="submit" name="rsubmit" value="Calculate Area" />
 	    </form>
 	</div>
+		
 	<div name="circle">
-	    <img src="lab3/circle.jpeg" alt="Circle"/>
+	    <img src="images/circle.jpeg" alt="Circle"/>
 	    <form id="careacalc" name="careacalc" action="<%= request.getContextPath() %>/calculate4.area?f=circle" method="post">
 		Radius:
 		<input type="text" name="radius" value="${radius}" placeholder="eg 15.67" />
@@ -41,8 +43,9 @@
 		<input type="submit" name="csubmit" value="Calculate Area" />
 	    </form>
 	</div>
+		
 	<div name="triangle">
-	    <img src="lab3/righttriangle.jpeg" alt="Triangle"/>
+	    <img src="images/righttriangle.jpeg" alt="Triangle"/>
 	    <form id="tareacalc" name="tareacalc" action="<%= request.getContextPath() %>/calculate4.area?f=triangle" method="post">
 		Height:
 		<input type="text" name="height" value="${height}" placeholder="eg 15.67" />
@@ -54,5 +57,74 @@
 	    </form>
 	</div>
 	<p> <c:out value="${errorMessage}" /> </p>
+
+	<p> </p>
+	<table border="1" width="539">
+	  <tr>
+	    <td colspan="2" width="529" bgcolor="#0000FF">
+	      <b>
+		<font color="#FFFFFF" size="4">HTTP
+		Request(pageContext.request.)</font>
+	      </b>
+	    </td>
+	  </tr>
+
+	  <tr>
+	    <td width="210">Access Method</td>
+
+	    <td width="313">&#160; 
+	    <c:out value="${pageContext.request.method}" />
+	    </td>
+	  </tr>
+
+	  <tr>
+	    <td width="210">Authentication Type</td>
+
+	    <td width="313">&#160; 
+	    <c:out value="${pageContext.request.authType}" />
+	    </td>
+	  </tr>
+
+	  <tr>
+	    <td width="210">Context Path</td>
+
+	    <td width="313">&#160; 
+	    <c:out value="${pageContext.request.contextPath}" />
+	    </td>
+	  </tr>
+
+	  <tr>
+	    <td width="210">Path Information</td>
+
+	    <td width="313">&#160; 
+	    <c:out value="${pageContext.request.pathInfo}" />
+	    </td>
+	  </tr>
+
+	  <tr>
+	    <td width="210">Path Translated</td>
+
+	    <td width="313">&#160; 
+	    <c:out value="${pageContext.request.pathTranslated}" />
+	    </td>
+	  </tr>
+
+	  <tr>
+	    <td width="210">Query String</td>
+
+	    <td width="313">&#160; 
+	    <c:out value="${pageContext.request.queryString}" />
+	    </td>
+	  </tr>
+
+	  <tr>
+	    <td width="210">Request URI</td>
+
+	    <td width="313">&#160; 
+	    <c:out value="${pageContext.request.requestURI}" />
+	    </td>
+	  </tr>
+	</table>
+	
      </body>
 </html>

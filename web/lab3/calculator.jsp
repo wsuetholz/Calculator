@@ -79,7 +79,7 @@
 
 	<h1>Simple Area Calculator</h1>
 	<div name="rectangle">
-	    <img src="lab3/rectangle.jpeg" alt="Rectangle"/>
+	    <img src="<%= request.getContextPath() %>/images/rectangle.jpeg" alt="Rectangle"/>
 	    <form id="rareacalc" name="rareacalc" action="<%= request.getContextPath() %>/calculate3.area?f=rectangle" method="post">
 		Length:
 		<input type="text" name="length" value="<%= length %>" placeholder="eg 15.67" />
@@ -91,7 +91,7 @@
 	    </form>
 	</div>
 	<div name="circle">
-	    <img src="lab3/circle.jpeg" alt="Circle"/>
+	    <img src="<%= request.getContextPath() %>/images/circle.jpeg" alt="Circle"/>
 	    <form id="careacalc" name="careacalc" action="<%= request.getContextPath() %>/calculate3.area?f=circle" method="post">
 		Radius:
 		<input type="text" name="radius" value="<%= radius %>" placeholder="eg 15.67" />
@@ -101,7 +101,7 @@
 	    </form>
 	</div>
 	<div name="triangle">
-	    <img src="lab3/righttriangle.jpeg" alt="Triangle"/>
+	    <img src="<%= request.getContextPath() %>/images/righttriangle.jpeg" alt="Triangle"/>
 	    <form id="tareacalc" name="tareacalc" action="<%= request.getContextPath() %>/calculate3.area?f=triangle" method="post">
 		Height:
 		<input type="text" name="height" value="<%= height %>" placeholder="eg 15.67" />
