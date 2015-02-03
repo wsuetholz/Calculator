@@ -28,7 +28,7 @@
 		<input type="text" name="length" value="${length}" placeholder="eg 15.67" />
 		Width:
 		<input type="text" name="width" value="${width}" placeholder="eg 9.4" />
-		Area: <c:out value="${rectanglearea}" />
+		Area: <fmt:formatNumber type="number" maxFractionDigits="2" value="${rectanglearea}" />
 		<p> </p>
 		<input type="submit" name="rsubmit" value="Calculate Area" />
 	    </form>
@@ -39,7 +39,7 @@
 	    <form id="careacalc" name="careacalc" action="${baseURL}/calculate4.area?f=circle" method="post">
 		Radius:
 		<input type="text" name="radius" value="${radius}" placeholder="eg 15.67" />
-		Area: <c:out value="${circlearea}" />
+		Area: <fmt:formatNumber type="number" maxFractionDigits="2"  value="${circlearea}" />
 		<p> </p>
 		<input type="submit" name="csubmit" value="Calculate Area" />
 	    </form>
@@ -52,7 +52,7 @@
 		<input type="text" name="height" value="${height}" placeholder="eg 15.67" />
 		Base Length:
 		<input type="text" name="baselength" value="${baselength}" placeholder="eg 9.4" />
-		Area: <c:out value="${trianglearea}" />
+		Area: <fmt:formatNumber type="number" maxFractionDigits="2"  value="${trianglearea}" />
 		<p> </p>
 		<input type="submit" name="tsubmit" value="Calculate Area" />
 	    </form>
